@@ -11,6 +11,7 @@ namespace AppCrud.Data
         }
 
         public DbSet<Empleado> Empleados { get; set; }
+
         override protected void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Empleado>(tb =>
@@ -41,6 +42,13 @@ namespace AppCrud.Data
 
                 // Propiedades de la columna Activo
                 tb.Property(col => col.Activo).IsRequired();
+
+                // Propiedad de la columna FechaContrato
+                tb.Property(col => col.FechaContrato).IsRequired();
+
+                // Proiedad de la columna FechaCreacion
+                tb.Property(col => col.FechaCreacion).HasDefaultValueSql("GETDATE()");
+
             });
 
             modelBuilder.Entity<Empleado>().ToTable("Empleados");

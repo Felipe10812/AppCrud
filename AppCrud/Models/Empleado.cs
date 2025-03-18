@@ -10,5 +10,8 @@
         public int Telefono { get; set; }
         public string Email { get; set; }
         public bool Activo { get; set; }
+
+        public string FechaCreacion { get; set; }
+        public string FechaContrato { get; set; }
     }
 }

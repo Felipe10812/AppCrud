@@ -48,7 +48,6 @@ namespace AppCrud.Data
 
                 // Proiedad de la columna FechaCreacion
                 tb.Property(col => col.FechaCreacion).HasDefaultValueSql("GETDATE()");
-
             });
 
             modelBuilder.Entity<Empleado>().ToTable("Empleados");

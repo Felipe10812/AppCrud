@@ -1,0 +1,57 @@
+﻿@model AppCrud.Models.Empleado;
+
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2>Editar empleado</h2>
+        <form asp-controller="Empleado" asp-action="Editar" method="post">
+
+            @* Para mantener el id del registro oculto *@
+            <input type="hidden" asp-for="IdEmpleado" />
+
+            <div class="mb-3">
+                <label>Nombre</label>
+                <input type="text" class="form-control" name="Nombre" asp-for="Nombre" />
+            </div>
+
+            <div class="mb-3">
+                <label>Apellido</label>
+                <input type="text" class="form-control" name="Apellido" asp-for="Apellido" />
+            </div>
+
+            <div class="mb-3">
+                <label>Cargo</label>
+                <input type="text" class="form-control" name="Cargo" asp-for="Cargo" />
+            </div>
+
+            <div class="mb-3">
+                <label>Direccion</label>
+                <input type="text" class="form-control" name="Direccion" asp-for="Direccion" />
+            </div>
+
+            <div class="mb-3">
+                <label>Telefono</label>
+                <input type="number" class="form-control" name="Telefono" asp-for="Telefono" />
+            </div>
+
+            <div class="mb-3">
+                <label>Correo</label>
+                <input type="email" class="form-control" name="Email" asp-for="Email" />
+            </div>
+
+            <div class="mb-3">
+                <label>Fecha de contrato</label>
+                <input type="date" class="form-control" name="FechaContrato" asp-for="FechaContrato" />
+            </div>
+
+            <div class="mb-3">
+                <input class="form-check-input" asp-for="Activo" type="checkbox" id="chkAactivo" />
+                <label class="form-check-label" for="chkActivo">Activo</label>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-controller="Empleado" asp-action="Lista" class="btn btn-warning">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -28,9 +28,7 @@
                         <td>@(item.Activo ? "Si" : "No")</td>
                         <td>
                             <a asp-controller="Empleado" asp-route-IdEmpleado="@item.IdEmpleado" asp-action="Editar" class="btn btn-primary mb-3">Editar</a>
-                            <a asp-controller="Empleado" asp-route-IdEmpleado="@item.IdEmpleado" asp-action="Details" class="btn btn-alert mb-3">Detalles</a>
-                            <a asp-controller="Empleado" asp-route-IdEmpleado="@item.IdEmpleado" asp-action="Eliminar" class="btn btn-danger mb-3">Eliminar</a>
-
+                            <a asp-controller="Empleado" asp-route-IdEmpleado="@item.IdEmpleado" asp-action="Eliminar" onclick="return confimar()" class="btn btn-danger mb-3">Eliminar</a>
                         </td>
                     </tr>
                 }
@@ -39,3 +37,11 @@
 
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        function confimar(){
+            return confirm("¿Estas seguro de eliminar el empleado?");
+        }
+    </script>
+}
